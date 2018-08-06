@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KotlinPlayground</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="cancel">CANCEL</string>
+    <string name="back_home">BACK HOME</string>
+    <string name="welcome">Welcome!</string>
+    <string name="password">Password</string>
 </resources>

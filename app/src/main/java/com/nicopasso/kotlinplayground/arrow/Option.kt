@@ -5,7 +5,7 @@ import arrow.instances.extensions
 import arrow.typeclasses.binding
 
 
-class ArrowPlayground {
+class ArrowOptionPlayground {
 
     val maybeInt: Option<Int> = Option(1) // Some(1)
     val result: Int? = maybeInt.orNull() // 1

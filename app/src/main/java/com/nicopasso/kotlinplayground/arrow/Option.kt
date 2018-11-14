@@ -2,6 +2,7 @@ package com.nicopasso.kotlinplayground.arr
 
 import arrow.core.*
 import arrow.instances.extensions
+import arrow.instances.option.functor.functor
 import arrow.typeclasses.binding
 
 

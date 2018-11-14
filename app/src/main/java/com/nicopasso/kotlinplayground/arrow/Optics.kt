@@ -2,16 +2,15 @@ package com.nicopasso.kotlinplayground.arrow
 
 import arrow.optics.Lens
 import arrow.optics.optics
-import arrow.optics.dsl.*
 
-/**********************************************************************************************************************************************************************
+/**************************************************************************
 
- __       _______ .__   __.      _______. _______     _______.        ___      .__   __.  _______       ______   .______   .___________. __    ______     _______.
-|  |     |   ____||  \ |  |     /       ||   ____|   /       |       /   \     |  \ |  | |       \     /  __  \  |   _  \  |           ||  |  /      |   /       |
-|  |     |  |__   |   \|  |    |   (----`|  |__     |   (----`      /  ^  \    |   \|  | |  .--.  |   |  |  |  | |  |_)  | `---|  |----`|  | |  ,----'  |   (----`
-|  |     |   __|  |  . `  |     \   \    |   __|     \   \         /  /_\  \   |  . `  | |  |  |  |   |  |  |  | |   ___/      |  |     |  | |  |        \   \
-|  `----.|  |____ |  |\   | .----)   |   |  |____.----)   |       /  _____  \  |  |\   | |  '--'  |   |  `--'  | |  |          |  |     |  | |  `----.----)   |
-|_______||_______||__| \__| |_______/    |_______|_______/       /__/     \__\ |__| \__| |_______/     \______/  | _|          |__|     |__|  \______|_______/
+      ______   .______   .___________. __    ______     _______.
+     /  __  \  |   _  \  |           ||  |  /      |   /       |
+    |  |  |  | |  |_)  | `---|  |----`|  | |  ,----'  |   (----`
+    |  |  |  | |   ___/      |  |     |  | |  |        \   \
+    |  `--'  | |  |          |  |     |  | |  `----.----)   |
+     \______/  | _|          |__|     |__|  \______|_______/
 
 
 
@@ -28,9 +27,10 @@ import arrow.optics.dsl.*
     /___\ /___\      '-'._----'
 
 
- ***********************************************************************************************************************************************************************/
+ *****************************************************************************/
 
-// In Functional Programming we have two different types of Optics: Lenses and Prisms. Both propose a way for "getting" and "setting" values in a data type.
+// In Functional Programming the main two types of Optics are Lenses and Prisms.
+// Both propose a way for "getting" and "setting" values in a data type.
 // Lens works with product types (tuples, objects), Prism works mainly with arrays
 // "A Lens is a first-class reference to a subpart of some data type. Three things you might want to do:
 // - get a nested object
@@ -141,7 +141,7 @@ class Optics {
     val salesCase = SalesCaseOptics(1, order)
 
     init {
-        SalesCase.order.product.price.amount(salesCase, { it + 1000 })
+        SalesCaseOptics.order.product.price.amount.modify(salesCase) { it + 1000 }
     }
 
 

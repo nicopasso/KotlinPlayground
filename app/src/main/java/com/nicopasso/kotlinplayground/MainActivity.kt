@@ -15,11 +15,7 @@ import android.widget.TextView
 import com.nicopasso.kotlinplayground.conventions.Fraction
 import com.nicopasso.kotlinplayground.conventions.get
 import com.nicopasso.kotlinplayground.conventions.inc
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
 import java.util.*
-import kotlin.coroutines.experimental.CoroutineContext
-import kotlin.coroutines.experimental.suspendCoroutine
 
 //****************************************************
 //               EXTENSION FUNCTIONS
@@ -143,10 +139,10 @@ class MainActivity : AppCompatActivity(), Clickable, Focusable {
         val radioButton = RadioButton(this)
         radioButton createChipWithColor R.color.abc_color_highlight_material
 
-        launch(UI) {
+        /*launch(UI) {
             val post = submitPost(10)
             radioButton.text = post
-        }
+        }*/
 
 
         //range
@@ -245,7 +241,7 @@ class MainActivity : AppCompatActivity(), Clickable, Focusable {
 
     val isHello = "hello" IS "hello"
 
-    //region COUROUTINES
+    /*//region COUROUTINES
     suspend fun submitPost(number: Int): String {
         return suspendCoroutine { cont ->
             /*
@@ -266,7 +262,7 @@ class MainActivity : AppCompatActivity(), Clickable, Focusable {
         public fun resume(value: T)
         public fun resumeWithException(excThrowable: Throwable)
     }
-    //endregion
+    //endregion*/
 
     //region Infix methods
     infix fun String.IS(someString: String) = equals(someString)

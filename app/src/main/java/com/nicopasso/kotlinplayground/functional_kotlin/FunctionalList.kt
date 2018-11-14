@@ -15,7 +15,7 @@ sealed class FunctionalList<out T> {
 
     //Without the initializeFunList() method:
     //val numbers = Construct(1, Construct(2, Construct(3, Construct(4, Nil))))
-    val numbers = initializeFunList(1, 2, 3, 4)
+    private val numbers = initializeFunList(1, 2, 3, 4)
 
     private fun forEach(f: (T) -> Unit) {
         tailrec fun go(list: FunctionalList<T>, f: (T) -> Unit) {
